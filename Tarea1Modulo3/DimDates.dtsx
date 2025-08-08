@@ -1,0 +1,550 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/7/2025 7:14:11 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="FRAN-PC"
+  DTS:CreatorName="FRAN-PC\frane"
+  DTS:DTSID="{51034C71-21E1-4745-95A8-EEF184C0CA29}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="DimDates"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{B542F5EF-4B3A-4A93-98F1-F46BD7FB8D9D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[date_csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B1C88292-FD66-47EE-AD27-F7122B1747EA}"
+      DTS:ObjectName="date_csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2058"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\frane\Documentos\dimdates.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date"
+              DTS:DTSID="{86837ADD-282F-4C56-9951-2DC88B8B9871}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CalendarWeek"
+              DTS:DTSID="{5C9B4C32-8625-4B40-8D32-77D712C8B198}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CalendarMonth"
+              DTS:DTSID="{0F8A3381-D4B1-409F-8529-6469DC9D86AC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CalendarDayInMonth"
+              DTS:DTSID="{179E8258-15D2-4D7B-9611-D9DB5C7AC679}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CalendarYear"
+              DTS:DTSID="{1FAEC36B-C41D-4372-8D26-1BB0158E48AC}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FRAN-PC.DWTailspinToys2025]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{CE9A8A9E-93EB-49B9-B886-164A68F84655}"
+      DTS:ObjectName="FRAN-PC.DWTailspinToys2025">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=FRAN-PC;Initial Catalog=DWTailspinToys2025;Integrated Security=True;TrustServerCertificate=True;Application Name=SSIS-DimDates-{CE9A8A9E-93EB-49B9-B886-164A68F84655}FRAN-PC.DWTailspinToys2025;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Llenar Tabla DimDates"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{CF39FFDC-8EDF-4F6A-9838-0EE04934B8BD}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Llenar Tabla DimDates"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Llenar Tabla DimDates\DimDates"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="DimDates"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."DimDates"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Llenar Tabla DimDates\DimDates.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[FRAN-PC.DWTailspinToys2025]"
+                  connectionManagerRefId="Package.ConnectionManagers[FRAN-PC.DWTailspinToys2025]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].Columns[Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[FullDate]"
+                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].Columns[CalendarWeek]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CalendarWeek"
+                      externalMetadataColumnId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[Week]"
+                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarWeek]" />
+                    <inputColumn
+                      refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].Columns[CalendarMonth]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CalendarMonth"
+                      externalMetadataColumnId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[Month]"
+                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarMonth]" />
+                    <inputColumn
+                      refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].Columns[CalendarDayInMonth]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CalendarDayInMonth"
+                      externalMetadataColumnId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[Day]"
+                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarDayInMonth]" />
+                    <inputColumn
+                      refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].Columns[CalendarYear]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CalendarYear"
+                      externalMetadataColumnId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[Year]"
+                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarYear]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[DateKey]"
+                      dataType="i4"
+                      name="DateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[FullDate]"
+                      dataType="dbTimeStamp"
+                      name="FullDate" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[Year]"
+                      dataType="i4"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[Month]"
+                      dataType="i4"
+                      name="Month" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[Day]"
+                      dataType="i4"
+                      name="Day" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[Week]"
+                      dataType="i4"
+                      name="Week" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Llenar Tabla DimDates\DimDates.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Llenar Tabla DimDates\DimDates.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Llenar Tabla DimDates\DimDates.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Llenar Tabla DimDates\DimDates.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Llenar Tabla DimDates\DimDates.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Llenar Tabla DimDates\Source date_csv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2058"
+              name="Source date_csv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Llenar Tabla DimDates\Source date_csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[date_csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[date_csv]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[Date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                      length="50"
+                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarWeek]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[CalendarWeek]"
+                      length="50"
+                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarWeek]"
+                      name="CalendarWeek"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarMonth]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[CalendarMonth]"
+                      length="50"
+                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarMonth]"
+                      name="CalendarMonth"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarDayInMonth]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[CalendarDayInMonth]"
+                      length="50"
+                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarDayInMonth]"
+                      name="CalendarDayInMonth"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarYear]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[CalendarYear]"
+                      length="50"
+                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarYear]"
+                      name="CalendarYear"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[CalendarWeek]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CalendarWeek" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[CalendarMonth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CalendarMonth" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[CalendarDayInMonth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CalendarDayInMonth" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[CalendarYear]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CalendarYear" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Llenar Tabla DimDates.Paths[Flat File Source Output]"
+              endId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET]"
+              name="Flat File Source Output"
+              startId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Llenar Tabla DimDates"
+          TopLeft="399,95" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Llenar Tabla DimDates">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Llenar Tabla DimDates\Source date_csv"
+          TopLeft="398,168" />
+        <NodeLayout
+          Size="127,42"
+          Id="Package\Llenar Tabla DimDates\DimDates"
+          TopLeft="657,277" />
+        <EdgeLayout
+          Id="Package\Llenar Tabla DimDates.Paths[Flat File Source Output]"
+          TopLeft="478.5,210">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="242,67"
+              Start="0,0"
+              End="242,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="4,33.5" />
+                  <mssgle:LineSegment
+                    End="238,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="238,33.5"
+                    Point2="242,33.5"
+                    Point3="242,37.5" />
+                  <mssgle:LineSegment
+                    End="242,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Llenar Tabla DimDates\DimDates">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

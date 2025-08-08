@@ -1,0 +1,492 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/7/2025 8:01:46 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="FRAN-PC"
+  DTS:CreatorName="FRAN-PC\frane"
+  DTS:DTSID="{75116B19-F267-44A0-8664-DCA77366A827}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{A8528247-4E41-4137-8AB9-2E5791C6AD47}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FRAN-PC.DWTailspinToys2025]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{105E5CB2-FAEF-4C61-86D6-D332853DC283}"
+      DTS:ObjectName="FRAN-PC.DWTailspinToys2025">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=FRAN-PC;Initial Catalog=DWTailspinToys2025;Integrated Security=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{105E5CB2-FAEF-4C61-86D6-D332853DC283}FRAN-PC.DWTailspinToys2025;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Fran-PC.TailspinToys2020-US]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{B36264B5-C8C2-40EB-A0DD-8801825B30EE}"
+      DTS:ObjectName="Fran-PC.TailspinToys2020-US">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=Fran-PC;Initial Catalog=TailspinToys2020-US;Integrated Security=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{B36264B5-C8C2-40EB-A0DD-8801825B30EE}Fran-PC.TailspinToys2020-US;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Llenar DimStates"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{AA447729-4D44-4320-A451-10E49062175B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Llenar DimStates"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Llenar DimStates\Destino de ADO NET"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino de ADO NET"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."DimStates"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Llenar DimStates\Destino de ADO NET.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[FRAN-PC.DWTailspinToys2025]"
+                  connectionManagerRefId="Package.ConnectionManagers[FRAN-PC.DWTailspinToys2025]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Llenar DimStates\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Llenar DimStates\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[StateID]"
+                      cachedDataType="i4"
+                      cachedName="StateID"
+                      externalMetadataColumnId="Package\Llenar DimStates\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[StateID]"
+                      lineageId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].Columns[StateID]" />
+                    <inputColumn
+                      refId="Package\Llenar DimStates\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[StateName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="StateName"
+                      externalMetadataColumnId="Package\Llenar DimStates\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[StateName]"
+                      lineageId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].Columns[StateName]" />
+                    <inputColumn
+                      refId="Package\Llenar DimStates\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[RegionName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="RegionName"
+                      externalMetadataColumnId="Package\Llenar DimStates\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[RegionName]"
+                      lineageId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].Columns[RegionName]" />
+                    <inputColumn
+                      refId="Package\Llenar DimStates\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[TimeZone]"
+                      cachedDataType="wstr"
+                      cachedLength="29"
+                      cachedName="TimeZone"
+                      externalMetadataColumnId="Package\Llenar DimStates\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[TimeZone]"
+                      lineageId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].Columns[TimeZone]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Llenar DimStates\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[StateKey]"
+                      dataType="i4"
+                      name="StateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar DimStates\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[StateID]"
+                      dataType="i4"
+                      name="StateID" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar DimStates\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[StateName]"
+                      dataType="wstr"
+                      length="50"
+                      name="StateName" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar DimStates\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[RegionName]"
+                      dataType="wstr"
+                      length="50"
+                      name="RegionName" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar DimStates\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[TimeZone]"
+                      dataType="wstr"
+                      length="50"
+                      name="TimeZone" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar DimStates\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[CurrentRow]"
+                      dataType="bool"
+                      name="CurrentRow" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar DimStates\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[effective_date]"
+                      dataType="dbTimeStamp"
+                      name="effective_date" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar DimStates\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[expiration_date]"
+                      dataType="dbTimeStamp"
+                      name="expiration_date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Llenar DimStates\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Llenar DimStates\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Llenar DimStates\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Llenar DimStates\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Llenar DimStates\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Llenar DimStates\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Llenar DimStates\Leer Tabla States"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="Leer Tabla States"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">-- DimState
+select
+	s.StateID,
+	s.StateCode,
+	s.StateName,
+	r.RegionName,
+	CASE s.TimeZone
+		WHEN 'AKST' THEN 'Alaska Standard Time'
+		WHEN 'CST' THEN 'Central Standard Time'
+		WHEN 'EST' THEN 'Eastern Standard Time'
+		WHEN 'MST' THEN 'Mountain Standard Time'
+		WHEN 'PST' THEN 'Pacific Standard Time'
+		WHEN 'HST' THEN 'Hawaii-Aleutian Standard Time'
+		ELSE 'Otra'
+	END as TimeZone
+from 
+	State s join region r on s.RegionID = r.RegionID;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Llenar DimStates\Leer Tabla States.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Fran-PC.TailspinToys2020-US]"
+                  connectionManagerRefId="Package.ConnectionManagers[Fran-PC.TailspinToys2020-US]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].Columns[StateID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].ExternalColumns[StateID]"
+                      lineageId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].Columns[StateID]"
+                      name="StateID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].Columns[StateCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].ExternalColumns[StateCode]"
+                      length="2"
+                      lineageId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].Columns[StateCode]"
+                      name="StateCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].Columns[StateName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].ExternalColumns[StateName]"
+                      length="50"
+                      lineageId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].Columns[StateName]"
+                      name="StateName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].Columns[RegionName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].ExternalColumns[RegionName]"
+                      length="50"
+                      lineageId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].Columns[RegionName]"
+                      name="RegionName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].Columns[TimeZone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].ExternalColumns[TimeZone]"
+                      length="29"
+                      lineageId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].Columns[TimeZone]"
+                      name="TimeZone"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].ExternalColumns[StateID]"
+                      dataType="i4"
+                      name="StateID" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].ExternalColumns[StateCode]"
+                      dataType="wstr"
+                      length="2"
+                      name="StateCode" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].ExternalColumns[StateName]"
+                      dataType="wstr"
+                      length="50"
+                      name="StateName" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].ExternalColumns[RegionName]"
+                      dataType="wstr"
+                      length="50"
+                      name="RegionName" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET].ExternalColumns[TimeZone]"
+                      dataType="wstr"
+                      length="29"
+                      name="TimeZone" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de error de origen de ADO NET].Columns[StateID]"
+                      dataType="i4"
+                      lineageId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de error de origen de ADO NET].Columns[StateID]"
+                      name="StateID" />
+                    <outputColumn
+                      refId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de error de origen de ADO NET].Columns[StateCode]"
+                      dataType="wstr"
+                      length="2"
+                      lineageId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de error de origen de ADO NET].Columns[StateCode]"
+                      name="StateCode" />
+                    <outputColumn
+                      refId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de error de origen de ADO NET].Columns[StateName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de error de origen de ADO NET].Columns[StateName]"
+                      name="StateName" />
+                    <outputColumn
+                      refId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de error de origen de ADO NET].Columns[RegionName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de error de origen de ADO NET].Columns[RegionName]"
+                      name="RegionName" />
+                    <outputColumn
+                      refId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de error de origen de ADO NET].Columns[TimeZone]"
+                      dataType="wstr"
+                      length="29"
+                      lineageId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de error de origen de ADO NET].Columns[TimeZone]"
+                      name="TimeZone" />
+                    <outputColumn
+                      refId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Llenar DimStates.Paths[Salida de origen de ADO NET]"
+              endId="Package\Llenar DimStates\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Llenar DimStates\Leer Tabla States.Outputs[Salida de origen de ADO NET]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Llenar DimStates"
+          TopLeft="382,86" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Llenar DimStates">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Llenar DimStates\Leer Tabla States"
+          TopLeft="425,96" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Llenar DimStates\Destino de ADO NET"
+          TopLeft="732,242" />
+        <EdgeLayout
+          Id="Package\Llenar DimStates.Paths[Salida de origen de ADO NET]"
+          TopLeft="508,138">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="315.5,104"
+              Start="0,0"
+              End="315.5,96.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,48"
+                    Point2="0,52"
+                    Point3="4,52" />
+                  <mssgle:LineSegment
+                    End="311.5,52" />
+                  <mssgle:CubicBezierSegment
+                    Point1="311.5,52"
+                    Point2="315.5,52"
+                    Point3="315.5,56" />
+                  <mssgle:LineSegment
+                    End="315.5,96.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Llenar DimStates\Leer Tabla States">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Llenar DimStates\Destino de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
