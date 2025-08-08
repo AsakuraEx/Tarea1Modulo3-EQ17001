@@ -1,10 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\frane\\source\\repos\\Tarea1Modulo3\\",
+  "WorkspaceRootPath": "C:\\Users\\frane\\source\\repos\\Tarea1ETL\\Tarea1Modulo3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ED91C878-46EF-5C7B-7331-ED64F23F3617}|Tarea1Modulo3.dtproj|C:\\Users\\frane\\source\\repos\\Tarea1Modulo3\\DimStates.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "AbsoluteMoniker": "D:0:0:{ED91C878-46EF-5C7B-7331-ED64F23F3617}|Tarea1Modulo3.dtproj|C:\\Users\\frane\\source\\repos\\Tarea1ETL\\Tarea1Modulo3\\Orquestador.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{ED91C878-46EF-5C7B-7331-ED64F23F3617}|Tarea1Modulo3.dtproj|solutionrelative:Orquestador.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED91C878-46EF-5C7B-7331-ED64F23F3617}|Tarea1Modulo3.dtproj|C:\\Users\\frane\\source\\repos\\Tarea1ETL\\Tarea1Modulo3\\DimStates.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
       "RelativeMoniker": "D:0:0:{ED91C878-46EF-5C7B-7331-ED64F23F3617}|Tarea1Modulo3.dtproj|solutionrelative:DimStates.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED91C878-46EF-5C7B-7331-ED64F23F3617}|Tarea1Modulo3.dtproj|C:\\Users\\frane\\source\\repos\\Tarea1ETL\\Tarea1Modulo3\\DimProducts.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{ED91C878-46EF-5C7B-7331-ED64F23F3617}|Tarea1Modulo3.dtproj|solutionrelative:DimProducts.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED91C878-46EF-5C7B-7331-ED64F23F3617}|Tarea1Modulo3.dtproj|C:\\Users\\frane\\source\\repos\\Tarea1ETL\\Tarea1Modulo3\\DimDates.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{ED91C878-46EF-5C7B-7331-ED64F23F3617}|Tarea1Modulo3.dtproj|solutionrelative:DimDates.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,18 +26,54 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "DimStates.dtsx [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\frane\\source\\repos\\Tarea1Modulo3\\DimStates.dtsx",
+              "DocumentMoniker": "C:\\Users\\frane\\source\\repos\\Tarea1ETL\\Tarea1Modulo3\\DimStates.dtsx",
               "RelativeDocumentMoniker": "DimStates.dtsx",
-              "ToolTip": "C:\\Users\\frane\\source\\repos\\Tarea1Modulo3\\DimStates.dtsx [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\frane\\source\\repos\\Tarea1ETL\\Tarea1Modulo3\\DimStates.dtsx [Dise\u00F1o]",
               "RelativeToolTip": "DimStates.dtsx [Dise\u00F1o]",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFkSURBVDhPjVO/S8NAGH2RtvSPaPeSwUVchS6CexYRJCBYUJC6SEFBBIXiIigKEYRSCC4unQTXDsVipkpbUJHSRTQ2/oimNCTnkOTMXdrqg4Pv\u002B\u002B69ly933wkAoFaqBGPQezdx9/CYO9xZOWU2CPF0aqVKXMcZuY7Kl2R6bomsbZ8sMwYAJvjCKOxtraNW1xTe5N8Gm7sHAIBaXVPC9Vg4KZSaNC7KIs0/jQQW5yUAQPn8gnIwrAM7nYGdzjB5cnIGqwuzDC9AxCDebSPebUdyc8DQWPx1Cx\u002BWQzrG722EtZEOeJgDwOgDukUQSyT5bdagUGrSBU6sW4A7ZNwiHQSHGBa/fANvFuDafZ4eNQgOLSx\u002B/gK06xa6dgpZKY\u002BNswbBlELAz0FRFumXjT7Bq\u002BXFpu31XpRFdJ5M3N73sO9rqMGxehWEI5Ci4puWTqsx\u002BK\u002BNnzAeWSlPxWEDgWGNg//PDLSc8AOMxO8cPcnGpQAAAABJRU5ErkJggg==",
-              "WhenOpened": "2025-08-08T02:01:46.154Z",
+              "WhenOpened": "2025-08-08T02:44:09.103Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DimProducts.dtsx [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\frane\\source\\repos\\Tarea1ETL\\Tarea1Modulo3\\DimProducts.dtsx",
+              "RelativeDocumentMoniker": "DimProducts.dtsx",
+              "ToolTip": "C:\\Users\\frane\\source\\repos\\Tarea1ETL\\Tarea1Modulo3\\DimProducts.dtsx [Dise\u00F1o]",
+              "RelativeToolTip": "DimProducts.dtsx [Dise\u00F1o]",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFkSURBVDhPjVO/S8NAGH2RtvSPaPeSwUVchS6CexYRJCBYUJC6SEFBBIXiIigKEYRSCC4unQTXDsVipkpbUJHSRTQ2/oimNCTnkOTMXdrqg4Pv\u002B\u002B69ly933wkAoFaqBGPQezdx9/CYO9xZOWU2CPF0aqVKXMcZuY7Kl2R6bomsbZ8sMwYAJvjCKOxtraNW1xTe5N8Gm7sHAIBaXVPC9Vg4KZSaNC7KIs0/jQQW5yUAQPn8gnIwrAM7nYGdzjB5cnIGqwuzDC9AxCDebSPebUdyc8DQWPx1Cx\u002BWQzrG722EtZEOeJgDwOgDukUQSyT5bdagUGrSBU6sW4A7ZNwiHQSHGBa/fANvFuDafZ4eNQgOLSx\u002B/gK06xa6dgpZKY\u002BNswbBlELAz0FRFumXjT7Bq\u002BXFpu31XpRFdJ5M3N73sO9rqMGxehWEI5Ci4puWTqsx\u002BK\u002BNnzAeWSlPxWEDgWGNg//PDLSc8AOMxO8cPcnGpQAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-08-08T02:44:08.511Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DimDates.dtsx [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\frane\\source\\repos\\Tarea1ETL\\Tarea1Modulo3\\DimDates.dtsx",
+              "RelativeDocumentMoniker": "DimDates.dtsx",
+              "ToolTip": "C:\\Users\\frane\\source\\repos\\Tarea1ETL\\Tarea1Modulo3\\DimDates.dtsx [Dise\u00F1o]",
+              "RelativeToolTip": "DimDates.dtsx [Dise\u00F1o]",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFkSURBVDhPjVO/S8NAGH2RtvSPaPeSwUVchS6CexYRJCBYUJC6SEFBBIXiIigKEYRSCC4unQTXDsVipkpbUJHSRTQ2/oimNCTnkOTMXdrqg4Pv\u002B\u002B69ly933wkAoFaqBGPQezdx9/CYO9xZOWU2CPF0aqVKXMcZuY7Kl2R6bomsbZ8sMwYAJvjCKOxtraNW1xTe5N8Gm7sHAIBaXVPC9Vg4KZSaNC7KIs0/jQQW5yUAQPn8gnIwrAM7nYGdzjB5cnIGqwuzDC9AxCDebSPebUdyc8DQWPx1Cx\u002BWQzrG722EtZEOeJgDwOgDukUQSyT5bdagUGrSBU6sW4A7ZNwiHQSHGBa/fANvFuDafZ4eNQgOLSx\u002B/gK06xa6dgpZKY\u002BNswbBlELAz0FRFumXjT7Bq\u002BXFpu31XpRFdJ5M3N73sO9rqMGxehWEI5Ci4puWTqsx\u002BK\u002BNnzAeWSlPxWEDgWGNg//PDLSc8AOMxO8cPcnGpQAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-08-08T02:44:07.732Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Orquestador.dtsx [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\frane\\source\\repos\\Tarea1ETL\\Tarea1Modulo3\\Orquestador.dtsx",
+              "RelativeDocumentMoniker": "Orquestador.dtsx",
+              "ToolTip": "C:\\Users\\frane\\source\\repos\\Tarea1ETL\\Tarea1Modulo3\\Orquestador.dtsx [Dise\u00F1o]",
+              "RelativeToolTip": "Orquestador.dtsx [Dise\u00F1o]",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFkSURBVDhPjVO/S8NAGH2RtvSPaPeSwUVchS6CexYRJCBYUJC6SEFBBIXiIigKEYRSCC4unQTXDsVipkpbUJHSRTQ2/oimNCTnkOTMXdrqg4Pv\u002B\u002B69ly933wkAoFaqBGPQezdx9/CYO9xZOWU2CPF0aqVKXMcZuY7Kl2R6bomsbZ8sMwYAJvjCKOxtraNW1xTe5N8Gm7sHAIBaXVPC9Vg4KZSaNC7KIs0/jQQW5yUAQPn8gnIwrAM7nYGdzjB5cnIGqwuzDC9AxCDebSPebUdyc8DQWPx1Cx\u002BWQzrG722EtZEOeJgDwOgDukUQSyT5bdagUGrSBU6sW4A7ZNwiHQSHGBa/fANvFuDafZ4eNQgOLSx\u002B/gK06xa6dgpZKY\u002BNswbBlELAz0FRFumXjT7Bq\u002BXFpu31XpRFdJ5M3N73sO9rqMGxehWEI5Ci4puWTqsx\u002BK\u002BNnzAeWSlPxWEDgWGNg//PDLSc8AOMxO8cPcnGpQAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-08-08T02:41:17.059Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]
