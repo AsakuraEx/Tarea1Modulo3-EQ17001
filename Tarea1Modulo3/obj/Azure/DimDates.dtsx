@@ -11,16 +11,16 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="DimDates"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{D7B28704-6D69-4ECF-B8CA-20A6300D868A}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{E9E09D9E-7147-461E-92CD-A8B5030F6C9F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[date_csv]"
+      DTS:refId="Package.ConnectionManagers[dates_csv]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{B1C88292-FD66-47EE-AD27-F7122B1747EA}"
-      DTS:ObjectName="date_csv">
+      DTS:DTSID="{6A0CFD38-883E-457F-9F23-DF27BC05DFB7}"
+      DTS:ObjectName="dates_csv">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -30,16 +30,15 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\frane\Documentos\dimdates.csv">
+          DTS:ConnectionString="C:\Users\frane\source\repos\Tarea1ETL\dimdates.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="Date"
-              DTS:DTSID="{86837ADD-282F-4C56-9951-2DC88B8B9871}"
+              DTS:DTSID="{E4771EB3-051A-4489-87F5-CE2E9CE4BBEF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -47,8 +46,8 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="CalendarWeek"
-              DTS:DTSID="{5C9B4C32-8625-4B40-8D32-77D712C8B198}"
+              DTS:ObjectName="Week"
+              DTS:DTSID="{8E265A25-B0C7-4785-AF06-6C58D98F31C3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -56,8 +55,8 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="CalendarMonth"
-              DTS:DTSID="{0F8A3381-D4B1-409F-8529-6469DC9D86AC}"
+              DTS:ObjectName="Month"
+              DTS:DTSID="{017872FD-4166-4BA0-A243-310BBF2A1688}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -65,8 +64,8 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="CalendarDayInMonth"
-              DTS:DTSID="{179E8258-15D2-4D7B-9611-D9DB5C7AC679}"
+              DTS:ObjectName="Day"
+              DTS:DTSID="{6BF0442F-74F1-4305-B197-93084D34AD41}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -74,8 +73,8 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="CalendarYear"
-              DTS:DTSID="{1FAEC36B-C41D-4372-8D26-1BB0158E48AC}"
+              DTS:ObjectName="Year"
+              DTS:DTSID="{F31DB651-9635-488D-AB07-178C63F81CE7}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -179,40 +178,40 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Date"
-                      externalMetadataColumnId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[FullDate]"
+                      externalMetadataColumnId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[Date]"
                       lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[Date]" />
                     <inputColumn
-                      refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].Columns[CalendarWeek]"
+                      refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].Columns[Year]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="CalendarWeek"
-                      externalMetadataColumnId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[Week]"
-                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarWeek]" />
-                    <inputColumn
-                      refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].Columns[CalendarMonth]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="CalendarMonth"
-                      externalMetadataColumnId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[Month]"
-                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarMonth]" />
-                    <inputColumn
-                      refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].Columns[CalendarDayInMonth]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="CalendarDayInMonth"
-                      externalMetadataColumnId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[Day]"
-                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarDayInMonth]" />
-                    <inputColumn
-                      refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].Columns[CalendarYear]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="CalendarYear"
+                      cachedName="Year"
                       externalMetadataColumnId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[Year]"
-                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarYear]" />
+                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[Year]" />
+                    <inputColumn
+                      refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].Columns[Month]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Month"
+                      externalMetadataColumnId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[Month]"
+                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[Month]" />
+                    <inputColumn
+                      refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].Columns[Day]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Day"
+                      externalMetadataColumnId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[Day]"
+                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[Day]" />
+                    <inputColumn
+                      refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].Columns[Week]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Week"
+                      externalMetadataColumnId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[Week]"
+                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[Week]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -221,9 +220,9 @@
                       dataType="i4"
                       name="DateKey" />
                     <externalMetadataColumn
-                      refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[FullDate]"
+                      refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[Date]"
                       dataType="dbTimeStamp"
-                      name="FullDate" />
+                      name="Date" />
                     <externalMetadataColumn
                       refId="Package\Llenar Tabla DimDates\DimDates.Inputs[Entrada de destino de ADO NET].ExternalColumns[Year]"
                       dataType="i4"
@@ -290,8 +289,8 @@
               <connections>
                 <connection
                   refId="Package\Llenar Tabla DimDates\Source date_csv.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[date_csv]"
-                  connectionManagerRefId="Package.ConnectionManagers[date_csv]"
+                  connectionManagerID="Package.ConnectionManagers[dates_csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[dates_csv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -322,15 +321,15 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarWeek]"
+                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[Week]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[CalendarWeek]"
+                      externalMetadataColumnId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[Week]"
                       length="50"
-                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarWeek]"
-                      name="CalendarWeek"
+                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[Week]"
+                      name="Week"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -344,15 +343,15 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarMonth]"
+                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[Month]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[CalendarMonth]"
+                      externalMetadataColumnId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[Month]"
                       length="50"
-                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarMonth]"
-                      name="CalendarMonth"
+                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[Month]"
+                      name="Month"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -366,15 +365,15 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarDayInMonth]"
+                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[Day]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[CalendarDayInMonth]"
+                      externalMetadataColumnId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[Day]"
                       length="50"
-                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarDayInMonth]"
-                      name="CalendarDayInMonth"
+                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[Day]"
+                      name="Day"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -388,15 +387,15 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarYear]"
+                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[Year]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[CalendarYear]"
+                      externalMetadataColumnId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[Year]"
                       length="50"
-                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[CalendarYear]"
-                      name="CalendarYear"
+                      lineageId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].Columns[Year]"
+                      name="Year"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -414,34 +413,32 @@
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[Date]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="dbDate"
                       name="Date" />
                     <externalMetadataColumn
-                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[CalendarWeek]"
+                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[Week]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="CalendarWeek" />
+                      name="Week" />
                     <externalMetadataColumn
-                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[CalendarMonth]"
+                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[Month]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="CalendarMonth" />
+                      name="Month" />
                     <externalMetadataColumn
-                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[CalendarDayInMonth]"
+                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[Day]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="CalendarDayInMonth" />
+                      name="Day" />
                     <externalMetadataColumn
-                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[CalendarYear]"
+                      refId="Package\Llenar Tabla DimDates\Source date_csv.Outputs[Flat File Source Output].ExternalColumns[Year]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="CalendarYear" />
+                      name="Year" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -508,13 +505,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="191,42"
-          Id="Package\Llenar Tabla DimDates"
-          TopLeft="399,95" />
-        <NodeLayout
           Size="166,42"
           Id="Package\Limpiar DimDates"
           TopLeft="168,45" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Llenar Tabla DimDates"
+          TopLeft="399,95" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
           TopLeft="334,66">
@@ -556,7 +553,7 @@
     design-time-name="Package\Llenar Tabla DimDates">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="161,42"
           Id="Package\Llenar Tabla DimDates\Source date_csv"
@@ -596,9 +593,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

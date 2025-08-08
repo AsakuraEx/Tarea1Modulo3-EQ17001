@@ -36,13 +36,17 @@ from
 
 -- FactSales
 select
-	OrderNumber,
-	OrderDate,
-	ShipDate,
-	Quantity,
-	UnitPrice,
-	Quantity*UnitPrice as SubTotal,
-	DiscountAmount,
-	(Quantity*UnitPrice)-DiscountAmount as Total
+	s.OrderNumber as SalesID,
+	s.ProductID,
+	st.StateID,
+	CONVERT(DATETIME, s.OrderDate) as OrderDate,
+	s.Quantity,
+	s.UnitPrice,
+	s.Quantity*s.UnitPrice as SubTotal,
+	s.DiscountAmount,
+	(s.Quantity*s.UnitPrice)-s.DiscountAmount as Total,
+	ISNULL(s.PromotionCode, '') as PromotionCode
 from
-	Sales;
+	Sales s
+	inner join Product p on s.ProductID = p.ProductID
+	inner join State st on s.CustomerStateID = st.StateID;

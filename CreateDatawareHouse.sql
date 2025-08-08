@@ -35,7 +35,7 @@ CREATE TABLE DimStates (
 -- Crea la dimension de Fechas
 CREATE TABLE DimDates (
     DateKey INT PRIMARY KEY IDENTITY,
-    FullDate DATE NOT NULL,
+    [Date] DATETIME NOT NULL,
     [Year] INT NOT NULL,
     [Month] INT NOT NULL,
     [Day] INT NOT NULL,
@@ -45,19 +45,20 @@ CREATE TABLE DimDates (
 -- Crea la tabla de hechos de Ventas
 CREATE TABLE FactSales (
     SalesKey INT PRIMARY KEY IDENTITY,
-    SalesID INT NOT NULL,
+    SalesID NVARCHAR(10) NOT NULL,
     ProductID INT NOT NULL,
     StateID INT NOT NULL,
-    OrderNumber NVARCHAR(10) NOT NULL,
-    OrderDate DATE NOT NULL,
+    DateID INT NOT NULL,
+    OrderDate DATETIME NOT NULL,
     Quantity INT NOT NULL,
     UnitPrice DECIMAL(18, 2) NOT NULL,
     Subtotal DECIMAL(18, 2) NOT NULL,
     DiscountAmount DECIMAL(18, 2) NOT NULL,
     Total DECIMAL(18, 2) NOT NULL,
+    PromotionCode NVARCHAR(20) NOT NULL
 
-    -- Claves foráneas
+    -- Llaves foráneas
     FOREIGN KEY (ProductID) REFERENCES DimProducts(ProductKey),
-    FOREIGN KEY (StateID) REFERENCES DimStates(StateKey)
+    FOREIGN KEY (StateID) REFERENCES DimStates(StateKey),
+    FOREIGN KEY (DateID) REFERENCES DimDates(DateKey)
 );
-
